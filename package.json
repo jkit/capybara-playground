@@ -1,0 +1,8 @@
+{
+  "name": "Workshop",
+  "private": true,
+  "version": "0.1.0",
+  "dependencies": {
+    "phantomjs-prebuilt": "2.1.12"
+  }
+}

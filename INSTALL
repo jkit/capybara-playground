@@ -1,0 +1,23 @@
+#!/bin/sh
+
+mkdir -p ./bin
+curl http://chromedriver.storage.googleapis.com/2.24/chromedriver_mac64.zip -o ./bin/chromedriver_mac64.zip
+unzip ./bin/chromedriver_mac64.zip -d ./bin
+
+npm install
+
+bundle install
+
+echo
+echo "  Let's try to run the tests ..."
+export PATH=./bin:./node_modules/.bin:$PATH
+bundle exec rspec spec/workshop_spec.rb
+
+echo '  You probably want to set this path:'
+echo ''
+echo '    $ export PATH=./bin:./node_modules/.bin:$PATH'
+echo ''
+echo '  Then you can run the tests with:'
+echo ''
+echo '    $ bundle exec rspec spec/workshop_spec.rb'
+echo ''
