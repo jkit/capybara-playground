@@ -6,6 +6,24 @@ Run ./INSTALL
 
 # Notes
 
+If you’re running this on a Mac, you might run into issues with
+
+```
+Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+...
+You have to install development tools first.
+...
+An error occurred while installing ffi (1.9.14), and Bundler cannot continue.
+Make sure that `gem install ffi -v ‘1.9.14’` succeeds before bundling
+...
+```
+
+This is most likely because you haven’t accepted the Xcode developer tools license, so run:
+
+```
+sudo xcodebuild -license accept
+```
+
 I had to install the chrome driver from here:
 
   http://chromedriver.storage.googleapis.com/2.24/chromedriver_mac64.zip
